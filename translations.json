@@ -1,14 +1,14 @@
 {
-  "en": {
-    "pageTitle": "Hello",
-    "title": "What's up man?"
-  },
-  "es": {
-    "pageTitle": "Hola",
-    "title": "Como estas ?"
-  },
-  "fr": {
-    "pageTitle": "Bonjour",
-    "title": "ça va ?"
-  }
+    "en": {
+        "pageTitle": "Hello",
+        "title": "What's up man?"
+    },
+    "es": {
+        "pageTitle": "Hola",
+        "title": "Como estas ?"
+    },
+    "fr": {
+        "pageTitle": "Bonjour",
+        "title": "ça va ?"
+    }
 }
