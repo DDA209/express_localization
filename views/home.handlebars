@@ -1,3 +1,4 @@
+
 <nav>
     <ul>
         <li><a href="/fr">Français</a></li>
@@ -6,8 +7,13 @@
     </ul>
 </nav>
 
+
+{{#if err}}
+    <h3> Page introuvable, retourner à la <a href="/">homepage</a> </h3>
+{{/if}}
+
 <h1>{{ pageTitle }}</h1> <!--{{ variable }} dans une balise-->
-<h2></h2>
-<p>{{ title }}</p>
+<h2>{{ title }}</h2>
 
 <img src={{ image }} />
+

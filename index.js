@@ -34,34 +34,39 @@ app.get('/', (req, res) => {
 
 
 app.get('/:lang?', (req, res) => {
-    // console.log('GET /:lang/', lang);
+    console.log('GET /:lang/');
     console.log('GET /:lang/ req.params', req.params);
 
-    const language = req.params.lang
+    let err = false;
+    const language = req.params.lang;
+
+    console.log('GET /:lang/ language', language);
+    // console.log('GET /:lang/ translate[language]', translate[language]);
+
+    if( typeof translate[language] === 'undefined' ){
+        err = true;
+        res.render('home', {
+            err
+        });
+        return;
+    };
+
     const pageTitle = translate[language].pageTitle;
     const title = translate[language].title;
     const image = `img/${language}.png`;
 
     console.log('GET /:lang/ translate[language]', translate[language]);
-    console.log('GET /:lang/ language', language);
     // console.log('GET /:lang/ pageTitle', pageTitle);
     // console.log('GET /:lang/ title', title);
 
-    res.render('home'
-    , {
+    
+    res.render('home', {
+        err,
         pageTitle,
         title,
         image
-    }
-    );
+    }    );
 })
-
-
-// app.get('*', (req, res) => {
-//     console.log('GET *');
-//     console.log('GET * req.params', req.params);
-
-// });
 
 
 app.listen( port, () => {
